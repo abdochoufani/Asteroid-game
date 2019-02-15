@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Anonymous+Pro');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+* {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#header{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display:flex;
+    background-image: url("../img/space-earth.jpg");
+    align-items: center;
+    justify-content: center;
+  
+}
+
+#board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+
+#how-to-play {
+    box-sizing: border-box;
+    border: 2px double black;
+    display: block;
+    height: 60vh;
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+}
+#container {
+margin: 0 auto;
+}
+
+#how-to-play h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3em;
+
+}
+
+#how-to-play p {
+    margin: 0 auto;
+}
+
+
+#how-to-play ul {
+    text-decoration: none;
+}
+
+/* Google Fonts */
+
+
+
+#canvas {
+    /* display: none;  */
+    box-shadow: 15px 15px 10px #aaaaaa;
+    margin: 5%;
+    background-color: black;
+}
