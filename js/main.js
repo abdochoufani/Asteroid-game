@@ -7,18 +7,30 @@ var friction=0.7;
 var StartingLives=4;
 var ctx = canvas.getContext("2d");
 var ship;
+var render;
 var lifeColour;
 var TEXT_FADE_TIME = 2.5; 
 var TEXT_SIZE = 40
 var astroids = [];
 var level=2, lives,text, textAlpha
-
  newGame(); // start new game
 document.addEventListener("keydown",function(event){keyDown(event)});
 document.addEventListener("keyup", function(event){keyUp(event)});
+    function pauseGame(){
+        if(!render){
+            render=window.setInterval(update, 1000 / FPS);
+        } else {
+            clearInterval(render);
+            render=null;
+            ctx.textAlign = "center";
+             ctx.textBaseline = "middle";
+             ctx.fillStyle = "rgba(255, 255, 255)";
+             ctx.font = "small-caps " + TEXT_SIZE + "px dejavu sans mono";
+             ctx.fillText("Press P to Continue", canvas.width / 2, canvas.height /2);
 
+        }
+    }
 
-    var render=setInterval(update, 1000 / FPS);
     
 // var render=setInterval(update, 1000 / FPS);  //update and rerender the canvas state
 // Asteroid.prototype.createAstroidBelt();
@@ -80,6 +92,11 @@ function checkCollision(exploding){
 function newGame (){
     ship = new Ship();
     level=0;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillStyle = "rgba(255, 255, 255)";
+    ctx.font = "small-caps " + TEXT_SIZE + "px dejavu sans mono";
+    ctx.fillText("Press P to Play", canvas.width / 2, canvas.height /2);
     lives=StartingLives;
     newLevel();
 }
@@ -123,6 +140,9 @@ function keyDown  (event) {
         return;
     }
     switch(event.keyCode){
+        case 80:
+        paused=!paused;
+        break;
         case 32: // space bar (allow shooting again)
         ship.shootLasers();
         case 65:
@@ -141,6 +161,9 @@ function keyUp (event){
         return;
     }
     switch(event.keyCode){
+        case 80:
+        pauseGame();
+        break;
         case 32: // space bar (allow shooting again)
         ship.canShoot = true;
         case 65:

@@ -11,9 +11,16 @@
 
 <body>      
 <div id="header"> 
+    <div id="img-container">
     <img src="./img/Asteroid-Logo-copy.png" alt="logo">
+    </div>
+    <div id="buttons">
+    <a class="a" href="#how-to-play">MISSION</a>
+    <a class="a" href="#board">SAVE THE EARTH</a>
+    </div>
 </div>  
     <div id="how-to-play" > 
+        <div>
         <h2>Mission</h2>
         <p>Hello Captain!! Our Satellites have detected an anomaly. For some uknown resaon the gravity that was holding the astroid belt together has been lowered.
             The astroids are floating around our solar system.<br>
@@ -25,12 +32,17 @@
             <li>A: Rotate <strong>The BattelStar</strong> Left</li>
             <li>D: Rotate <strong>The BattelStar</strong> Right</li>
             <li>Space: Shoot Laser</li>
-        
+            <li>P: Pause Game</li>
         </ul>
-    </div>    
-    <div id="board">
-        <canvas id="canvas" width="1000" height="800"></canvas>
-    </di
+        </div>
+        <p class="p">TO FIRST START THE MISSION PRESS <strong>P KEY</strong></p>
+        <a class="a black" href="#board"> SAVE THE EARTH</a>
+    </div>  
+    <div id="board-container">  
+        <div id="board">
+            <canvas id="canvas" width="1000" height="800"></canvas>
+        </div>
+    </div>
     <script src="./js/design.js"></script>
     <script src="./js/laser.js"></script>
     <script src="./js/astroids.js"></script>
